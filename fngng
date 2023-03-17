@@ -1,0 +1,79 @@
+
+local messagebill1 = Instance.new("BillboardGui")
+local chattext1 = Instance.new("TextLabel")
+local messagebill2 = Instance.new("BillboardGui")
+local chattext2 = Instance.new("TextLabel")
+local Players = game:GetService("Players")
+local plr1 = game.Players["27EshayLad"] 
+local plr2 = game.Players["17Syn"]
+
+
+function message1()
+    chattext1.Text = "HDR"
+end
+
+function message2()
+    chattext2.Text = "KZX"
+end
+
+function color1()
+    wait(.05)
+    chattext1.TextColor3 = Color3.new(0,0,255) 
+    wait(.05)
+    chattext2.TextColor3 = Color3.new(0,255,0)
+    wait(.05)
+    chattext1.TextColor3 = Color3.new(0,255,0)
+    wait(.05)
+    chattext2.TextColor3 = Color3.new(0,0,255) 
+    wait(.05)
+    chattext1.TextColor3 = Color3.new(255,0,0) 
+    wait(.05)
+    chattext2.TextColor3 = Color3.new(255,0,0) 
+    wait(.05)
+end
+
+if v.UserId == 1529382726 and v.UserId == 1997035237 then
+spawn(function()
+
+for i,v in pairs(game.Players:GetPlayers()) do
+
+getgenv().Debounce = false
+
+game:GetService("RunService").Heartbeat:Connect(function()
+if Debounce then return end
+Debounce = true
+
+messagebill1.Size = UDim2.new(0,100,0,50)
+messagebill1.Parent = plr1.Character
+messagebill1.StudsOffset = Vector3.new(0,4,0)
+messagebill1.Name = "Message"
+
+chattext1.Parent = messagebill1
+chattext1.Size = UDim2.new(1,0,1,0) -- text size
+chattext1.BackgroundTransparency = 1 -- text transparency
+chattext1.TextScaled = true -- distance scaling
+message1()
+    wait()
+
+color1()
+
+messagebill2.Size = UDim2.new(0,100,0,50)
+messagebill2.Parent = plr2.Character
+messagebill2.StudsOffset = Vector3.new(0,4,0)
+messagebill2.Name = "Message2"
+
+chattext2.Parent = messagebill2
+chattext2.Size = UDim2.new(1,0,1,0) -- text size
+chattext2.BackgroundTransparency = 1 -- text transparency
+chattext2.TextScaled = true -- distance scaling
+message2()
+    wait()
+
+color1()
+
+wait()
+Debounce = false
+end)
+end
+end
+end)
